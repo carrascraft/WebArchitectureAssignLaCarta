@@ -1,0 +1,251 @@
+@page "/table/{tableId}"
+
+@rendermode InteractiveServer
+@using BlazorSignalRApp.Modules;
+@using System.Globalization;
+
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager Navigation
+@implements IAsyncDisposable
+<link href="styles.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<PageTitle>Estás en la mesa @tableId</PageTitle>
+<section class="get-in-touch">
+    <h1 class="title"> HACÉ TU PEDIDO YAAA! </h1> 
+</section>
+
+
+@foreach(var menuItem in menuRepository.getNamesAndPrices()){
+
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action flex-column align-items-start"> 
+            <div class="d-flex w-100 justify-content-between">
+                <div>
+                    <h5 class="mb-1">@menuItem.Item1</h5>
+
+                    @if (currentRequest.ammountOfItem(menuItem.Item1) != 0)
+                    {
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-secondary me-2" @onclick="() => currentRequest.decreaseQuantityOfItem(menuItem.Item1)">-</button>
+                            <span>@currentRequest.ammountOfItem(menuItem.Item1)</span>
+                            <button class="btn btn-secondary ms-2" @onclick="() => currentRequest.increaseQuantityOfItem(menuItem.Item1)">+</button>
+                        </div>
+                    }
+                    else
+                    {
+                        <button class="btn btn-secondary ms-2" @onclick="() => currentRequest.increaseQuantityOfItem(menuItem.Item1)">+</button>
+                    }                    
+                </div>
+
+                <div>
+                    <h3 class="text-muted">@menuItem.Item2.ToString("C0", new CultureInfo("es-AR"))</h3>
+                    
+                    @if (currentRequest.ammountOfItem(menuItem.Item1) != 0)
+                    {
+                        <div class="d-flex align-items-center">
+                            <h5 class="text-muted me-2">Total:</h5>
+                            <h5 class="text-muted">@((currentRequest.ammountOfItem(menuItem.Item1) * menuItem.Item2).ToString("C0", new CultureInfo("es-AR")))</h5>
+                        </div>
+                    }
+                    
+                </div>
+            </div>
+
+        </a>
+    </div>
+
+}
+<div class="d-flex justify-content-end"><h3>Total : 1 millón</h3></div>
+<button type="button" class="btn btn-primary btn-lg btn-block" @onclick="SendCurrentRequest">CONFIRMAR PEDIDO</button>
+
+<p>espacio</p>
+<h5>estaría bueno que lo siguiente aparezca como un Modal pero ni idea como hacerlo</h5>
+
+
+
+<h1 class="title">TU PEDIDO! </h1> 
+
+@foreach (var kv in currentRequest.Request){
+    string name = kv.Key;
+    int quantity = kv.Value;
+       <div class="list-group">
+        <a class="list-group-item list-group-item-action flex-column align-items-start"> 
+            <div class="d-flex w-100 justify-content-between">
+                <div>
+                    <h5 class="mb-1">@name</h5>
+
+                    @if (currentRequest.ammountOfItem(name) != 0)
+                    {
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-secondary me-2" @onclick="() => currentRequest.decreaseQuantityOfItem(name)">-</button>
+                            <span>@currentRequest.ammountOfItem(name)</span>
+                            <button class="btn btn-secondary ms-2" @onclick="() => currentRequest.increaseQuantityOfItem(name)">+</button>
+                        </div>
+                    }
+                    else
+                    {
+                        <button class="btn btn-secondary ms-2" @onclick="() => currentRequest.increaseQuantityOfItem(name)">+</button>
+                    }                    
+                </div>
+
+                <div>
+                    <h3 class="text-muted">@(menuRepository.priceOfItem(name).ToString("C0", new CultureInfo("es-AR")))</h3>
+                    
+                    @if (quantity != 0)
+                    {
+                        <div class="d-flex align-items-center">
+                            <h5 class="text-muted me-2">Total:</h5>
+                            <h5 class="text-muted">@((quantity * menuRepository.priceOfItem(name)).ToString("C0", new CultureInfo("es-AR")))</h5>
+                        </div>
+                    }
+                    
+                </div>
+            </div>
+
+        </a>
+    </div>
+}
+
+
+
+@foreach (var message in ordersRepository.getTableOrders( int.Parse(tableId) ))
+{
+    <div class="card">
+    <!-- User Info and Timestamp -->
+    <div class="row" style="margin-top:-1.5rem; margin-bottom:1rem;">
+        <div class="col timestamp-info text-end">
+        </div>
+    </div>
+
+    <!-- Post Content -->
+    <div class="post">
+        <span><img class="quote-img" src="quote.png" alt="Quote Icon"></span>
+        <span class="post-txt">@message</span>
+        <span><img class="nice-img" src="left.png" alt="Nice Icon"></span>
+    </div>
+</div>
+}
+
+
+<hr>
+<section class="get-in-touch">
+   <h1 class="title">COMENTANOS ALGO!</h1>
+   <div class="contact-form row">
+     
+      <div class="form-field col-lg-12">
+         <input id="message" class="input-text js-input" type="text" @bind="messageInput" required>
+         <label class="label" for="message">PEDIDO</label>
+      </div>
+      <div class="form-field col-lg-12">
+         <button class='submit-btn' @onclick="Send" disabled="@(!IsConnected)">Send</button>
+      </div>
+   </div>
+</section>
+
+
+
+
+@code{
+    
+    public class OrderRequest{
+        public Dictionary<string, int> Request = new Dictionary<string, int>(); 
+        public void Clear(){
+            Request.Clear();
+        }
+        public void increaseQuantityOfItem(string item){
+            if (Request.ContainsKey(item)){
+                Request[item] ++; 
+            }else{
+                Request.Add(item, 1);
+            }
+        }
+        public void decreaseQuantityOfItem(string item){
+            if (Request.ContainsKey(item) && Request[item]>1){
+                Request[item] --; 
+            }else{
+                Request.Remove(item);
+            }
+        }
+        public int ammountOfItem(string item){
+            if( Request.ContainsKey(item)){
+                return Request[item];
+            }else{
+                return 0;
+            }
+        } 
+
+    }
+    OrderRequest currentRequest = new OrderRequest();
+
+    [Parameter]   
+     public required string tableId{get; set;}
+
+    private HubConnection? hubConnection;
+    private List<string> messages = new List<string>();
+    private string? messageInput;
+
+     private async Task SendCurrentRequest()
+    {
+        if (hubConnection is not null)
+        {
+            foreach(var item in currentRequest.Request){
+                string name = item.Key;
+                int quantity = item.Value;
+                for(int i = 0 ; i< quantity; i++){
+                    await hubConnection.SendAsync("SendMessage", tableId, name);
+                }
+            }
+            currentRequest.Clear();
+        }
+    }
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
+            .Build();
+
+        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        {
+            DateTime currentUtcDateTime = DateTime.UtcNow;
+            string formattedDateTime = currentUtcDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            var encodedMsg = $"{user} | {message} | {formattedDateTime}"; // Add spaces around pipes
+            if(user == tableId){
+                messages.Add(encodedMsg);
+            }
+            InvokeAsync(StateHasChanged);
+        });
+
+
+
+        await hubConnection.StartAsync();
+    }
+
+    private async Task Send()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.SendAsync("SendMessage", tableId, messageInput);
+        }
+    }
+    public bool IsConnected =>
+        hubConnection?.State == HubConnectionState.Connected;
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+
+}
+
+
+

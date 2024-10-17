@@ -1,0 +1,114 @@
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\bin\Debug\net8.0\appsettings.json
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\bin\Debug\net8.0\BlazorSignalRApp.staticwebassets.runtime.json
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\bin\Debug\net8.0\BlazorSignalRApp.exe
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\bin\Debug\net8.0\BlazorSignalRApp.deps.json
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\bin\Debug\net8.0\BlazorSignalRApp.runtimeconfig.json
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\bin\Debug\net8.0\BlazorSignalRApp.dll
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\bin\Debug\net8.0\BlazorSignalRApp.pdb
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\BlazorSignalRApp.csproj.AssemblyReference.cache
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\BlazorSignalRApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\BlazorSignalRApp.AssemblyInfoInputs.cache
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\BlazorSignalRApp.AssemblyInfo.cs
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\BlazorSignalRApp.csproj.CoreCompileInputs.cache
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\BlazorSignalRApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\staticwebassets\msbuild.BlazorSignalRApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\staticwebassets\msbuild.build.BlazorSignalRApp.props
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BlazorSignalRApp.props
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BlazorSignalRApp.props
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\scopedcss\bundle\BlazorSignalRApp.styles.css
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\scopedcss\projectbundle\BlazorSignalRApp.bundle.scp.css
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\BlazorSignalRApp.csproj.CopyComplete
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\BlazorSignalRApp.dll
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\refint\BlazorSignalRApp.dll
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\BlazorSignalRApp.pdb
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\BlazorSignalRApp.genruntimeconfig.cache
+C:\Users\mtazwar3765\Desktop\Daily Notes\BlazorSignalRApp\obj\Debug\net8.0\ref\BlazorSignalRApp.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\bin\Debug\net8.0\appsettings.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\bin\Debug\net8.0\BlazorSignalRApp.staticwebassets.runtime.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\bin\Debug\net8.0\BlazorSignalRApp.exe
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\bin\Debug\net8.0\BlazorSignalRApp.deps.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\bin\Debug\net8.0\BlazorSignalRApp.runtimeconfig.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\bin\Debug\net8.0\BlazorSignalRApp.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\bin\Debug\net8.0\BlazorSignalRApp.pdb
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\BlazorSignalRApp.csproj.AssemblyReference.cache
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\BlazorSignalRApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\BlazorSignalRApp.AssemblyInfoInputs.cache
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\BlazorSignalRApp.AssemblyInfo.cs
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\BlazorSignalRApp.csproj.CoreCompileInputs.cache
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\BlazorSignalRApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\staticwebassets\msbuild.BlazorSignalRApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\staticwebassets\msbuild.build.BlazorSignalRApp.props
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BlazorSignalRApp.props
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BlazorSignalRApp.props
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\scopedcss\bundle\BlazorSignalRApp.styles.css
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\scopedcss\projectbundle\BlazorSignalRApp.bundle.scp.css
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\BlazorSi.3E1DCFEF.Up2Date
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\BlazorSignalRApp.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\refint\BlazorSignalRApp.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\BlazorSignalRApp.pdb
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\BlazorSignalRApp.genruntimeconfig.cache
+C:\Users\Ezequiel\Documents\webapp\SignalR-Chat-App-Asp.net-8-Blazor-master\obj\Debug\net8.0\ref\BlazorSignalRApp.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\appsettings.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\BlazorSignalRApp.staticwebassets.runtime.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\BlazorSignalRApp.exe
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\BlazorSignalRApp.deps.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\BlazorSignalRApp.runtimeconfig.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\BlazorSignalRApp.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\BlazorSignalRApp.pdb
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\BlazorSignalRApp.csproj.AssemblyReference.cache
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\BlazorSignalRApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\BlazorSignalRApp.AssemblyInfoInputs.cache
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\BlazorSignalRApp.AssemblyInfo.cs
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\BlazorSignalRApp.csproj.CoreCompileInputs.cache
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\BlazorSignalRApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\staticwebassets\msbuild.BlazorSignalRApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\staticwebassets\msbuild.build.BlazorSignalRApp.props
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BlazorSignalRApp.props
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BlazorSignalRApp.props
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\scopedcss\bundle\BlazorSignalRApp.styles.css
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\scopedcss\projectbundle\BlazorSignalRApp.bundle.scp.css
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\BlazorSi.3E1DCFEF.Up2Date
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\BlazorSignalRApp.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\refint\BlazorSignalRApp.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\BlazorSignalRApp.pdb
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\BlazorSignalRApp.genruntimeconfig.cache
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\obj\Debug\net8.0\ref\BlazorSignalRApp.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\Users\Ezequiel\Documents\webapp\SignalR-Copiado\bin\Debug\net8.0\MudBlazor.dll
