@@ -1,0 +1,13 @@
+@page "/history"
+@using BlazorSignalRApp.Modules;
+
+@foreach(string m in list){
+    <l>@m</l>
+}
+
+
+
+@code{
+    List<string> list = (messagesRepository.GetHistory());
+
+}

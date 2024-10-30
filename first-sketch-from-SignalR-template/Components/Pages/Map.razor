@@ -1,0 +1,13 @@
+@page "/map"
+@inject IJSRuntime JS
+
+<h3>Home Page</h3>
+<button @onclick="ShowAlertMessage">Show Alert</button>
+
+@code {
+    private async Task ShowAlertMessage()
+    {
+        // Calls the JavaScript function 'showAlert' with a message parameter
+        await JS.InvokeVoidAsync("showAlert", "Hello from Blazor!");
+    }
+}

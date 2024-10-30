@@ -1,0 +1,96 @@
+@page "/orderDeliverer"
+@using BlazorSignalRApp.Modules;
+
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager Navigation
+@implements IAsyncDisposable
+<link href="styles.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<PageTitle>Buenas Cocinero</PageTitle>
+
+<section class="d-flex justify-content-center">
+   <h1 class="display-4">JAJAJA LA PÁGINA DEL EMPLEADO POBRE!!!!!</h1>
+</section>
+
+
+
+
+
+
+@if( ordersRepository.getOpenedTables().Count() == 0  ){
+    <div class="d-flex justify-content-center">TODO AL DÍA ÑERI</div>
+}
+else{
+    @foreach (int tableId in ordersRepository.getOpenedTables())
+    {
+        <div class="border rounded p-3 mb-4 bg-light">
+            <h3 class="text-primary mb-3">Mesa @tableId - Pending Orders</h3>
+            <div class="pl-3">
+                @foreach (var message in ordersRepository.getTableOrders(tableId))
+                {
+                    <div class="d-flex justify-content-between align-items-center mb-2 p-2 border-bottom">
+                        <span>@message</span>
+                        <button class="btn btn-outline-success btn-sm" type="button" @onclick="() => DeliverMessage(tableId, message)">
+                            ENTREGADO!
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+}
+
+
+
+
+@code{
+    private HubConnection? hubConnection;
+    private string? messageInput;
+
+
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
+            .Build();
+
+        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        {
+            InvokeAsync(StateHasChanged);
+        });
+
+
+
+        await hubConnection.StartAsync();
+    }
+
+    private async Task DeliverMessage( int tableId, string order)
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.SendAsync("DeliverOrder", tableId, order);
+        }
+    }
+
+    public bool IsConnected =>
+        hubConnection?.State == HubConnectionState.Connected;
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+
+}
+
+
+
