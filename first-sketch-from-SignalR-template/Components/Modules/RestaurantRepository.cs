@@ -26,6 +26,18 @@ public static class RestaurantRepository
         restaurants[id].addTable();
     }
 
+    public static void substractTableToRestaurant(int id)
+    {
+        //Capaz deberia validar que existe el restaurant con ese id
+        restaurants[id].substractTable();
+    }
+
+    public static int getCountTableFromRestaurant(int id)
+    {
+        //Capaz deberia validar que existe el restaurant con ese id
+        return restaurants[id].getCountOfTables();
+    }
+
     public static List<Tuple<string,int>> getMenuOfARestaurant(int id)
     {
         List<Tuple<string, int>> listOfItems = new List<Tuple<string, int>>();

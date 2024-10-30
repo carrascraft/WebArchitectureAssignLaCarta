@@ -1,4 +1,4 @@
-﻿@page "/Resto"
+﻿@page "/Resto/{restoId}"
 @rendermode InteractiveServer
 @using Microsoft.AspNetCore.SignalR.Client
 @using BlazorSignalRApp.Modules
@@ -8,12 +8,12 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<h3>Menú del Restaurante 1</h3>
+<h3>Menú del Restaurante @restoId</h3>
 
-@if (RestaurantRepository.getMenuOfARestaurant(1).Count > 0)
+@if (RestaurantRepository.getMenuOfARestaurant(int.Parse(restoId)).Count > 0)
 {
     <ul class="list-group">
-        @foreach (var item in RestaurantRepository.getMenuOfARestaurant(1))
+        @foreach (var item in RestaurantRepository.getMenuOfARestaurant(int.Parse(restoId)))
         {
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <span>@item.Item1</span>
@@ -45,12 +45,32 @@ else
     </div>
 </div>
 
-<button class="btn btn-secondary mt-3" @onclick="Create" disabled="@(!IsConnected)">Nuevo Resto</button>
+<div class="container mt-4">
+    <h3>Cantidad de Mesas</h3>
+
+    <div class="d-flex align-items-center">
+        <button class="btn btn-danger me-3"
+                @onclick="DecrementarMesa"
+                disabled="@(RestaurantRepository.getCountTableFromRestaurant(int.Parse(restoId)) <= 1)">
+            -
+        </button>
+
+        <span>@RestaurantRepository.getCountTableFromRestaurant(int.Parse(restoId))</span>
+
+        <button class="btn btn-success ms-3" @onclick="IncrementarMesa">+</button>
+    </div>
+</div>
+
+@* <button class="btn btn-secondary mt-3" @onclick="Create" disabled="@(!IsConnected)">Nuevo Resto</button> *@
 
 @code {
     private string? name;
     private int? price;
+    int cantTables;
     private HubConnection? hubConnection;
+
+    [Parameter]
+     public required string restoId { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -75,7 +95,7 @@ else
         {
             Console.WriteLine($"Agregando ítem: {name}, Precio: {price}");
 
-            await hubConnection.SendAsync("AddMenuItem", 1, price, name);
+            await hubConnection.SendAsync("AddMenuItem", int.Parse(restoId), price, name);
 
             name = "";
             price = 0;
@@ -89,9 +109,21 @@ else
         string itemName = item.Item1;
         int itemPrice = item.Item2;
         Console.WriteLine($"Eliminando ítem: {itemName}, Precio: {itemPrice}");
-        await hubConnection.SendAsync("DeleteMenuItem", 1, itemPrice, itemName);
+        await hubConnection.SendAsync("DeleteMenuItem", int.Parse(restoId), itemPrice, itemName);
         StateHasChanged();
     }
+
+    private async Task IncrementarMesa()
+    {
+        await hubConnection.SendAsync("AddTable", int.Parse(restoId));
+    }
+
+
+    private async Task DecrementarMesa()
+    {
+        await hubConnection.SendAsync("SubstractTable", int.Parse(restoId));
+    }
+
 
     private async Task Create()
     {
@@ -111,154 +143,3 @@ else
         }
     }
 }
-
-
-
-
-@* @page "/Resto"
-@rendermode InteractiveServer
-@using Microsoft.AspNetCore.SignalR.Client
-@using BlazorSignalRApp.Modules
-@inject NavigationManager Navigation
-@implements IAsyncDisposable
-<link href="styles.css" rel="stylesheet">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<h3>Menú del Restaurante 1</h3>
-
-@if (0 != RestaurantRepository.getMenuOfARestaurant(1).Count)
-{
-    <ul class="list-group">
-        @foreach (var item in RestaurantRepository.getMenuOfARestaurant(1))
-        {
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span>@item.Item1</span>
-                <span class="badge bg-primary rounded-pill">
-                    @item.Item2.ToString("C0", new System.Globalization.CultureInfo("es-AR"))
-                </span>
-            </li>
-        }
-    </ul>
-}
-else
-{
-    <p>No hay ítems disponibles en el menú.</p>
-}
-
-<hr />
-
-<div class="contact-form row">
-    <div class="form-field col-lg-12">
-        <label for="nombre">Nombre</label>
-        <input id="name" class="input-text js-input" type="text" @bind="name" required>
-    </div>
-
-    <div class="form-field col-lg-12">
-        <label for="precio">Precio</label>
-        <input id="message" class="input-text js-input" type="text" @bind="price" required>
-    </div>
-    <div class="form-field col-lg-12">
-        <button class='submit-btn' @onclick="AgregarItem" disabled="@(!IsConnected)">Agregar</button>
-    </div>
-</div>
-
-
-
-@foreach (var res in RestaurantRepository.restaurants)
-{
-    <div class="form-field col-lg-12">
-        @res.GetHashCode();
-    </div>
-}
-
-<button class='submit-btn' @onclick="Create" disabled="@(!IsConnected)">NuevoResto</button>
-
-
-
-@code {
-    private List<Tuple<string, int>> menuItems;
-    private MenuItem newItem = new MenuItem();
-    private HubConnection? hubConnection;
-    private List<string> messages = new List<string>();
-    private string? name;
-    private int? price;
-
-    protected override async Task OnInitializedAsync()
-    {
-        hubConnection = new HubConnectionBuilder()
-            .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
-            .Build();
-
-        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
-        {
-            DateTime currentUtcDateTime = DateTime.UtcNow;
-            string formattedDateTime = currentUtcDateTime.ToString("yyyy-MM-dd HH:mm:ss");
-            var encodedMsg = $"{user} | {message} | {formattedDateTime}"; // Add spaces around pipes
-            messages.Add(encodedMsg);
-            InvokeAsync(StateHasChanged);
-        });
-
-
-
-        await hubConnection.StartAsync();
-    }
-
-    private async Task AgregarItem()
-    {
-        Console.WriteLine($"Agregando item: {name}, Precio: {price}");
-
-        // Log para ver si estamos aquí
-        Console.WriteLine("Valores válidos, enviando al Hub...");
-
-        await hubConnection.SendAsync("AddMenuItem", 1, price, name);
-        price = 0;
-        name = "";
-
-    }
-    private async Task Create()
-    {
-        if (hubConnection is not null)
-        {
-            await hubConnection.SendAsync("CreateResto", 2);
-        }
-    }
-
-    private async Task AddMenuItem()
-    {
-        if (hubConnection is not null)
-        {
-            await hubConnection.SendAsync("AddMenuItem", 1, newItem.Price,newItem.Name);
-        }
-    }
-
-    public bool IsConnected =>
-        hubConnection?.State == HubConnectionState.Connected;
-
-    public async ValueTask DisposeAsync()
-    {
-        if (hubConnection is not null)
-        {
-            await hubConnection.DisposeAsync();
-        }
-    }
-
-    protected override void OnInitialized()
-    {
-        CargarMenu();
-    }
-
-    private void CargarMenu()
-    {
-        menuItems = RestaurantRepository.getMenuOfARestaurant(1);
-    }
-
-} *@
-
-

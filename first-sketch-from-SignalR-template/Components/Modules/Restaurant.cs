@@ -56,4 +56,14 @@ public class Restaurant
         int tableId = _tables.Count;
         _tables.Add(new Table(tableId));
     }
+
+    public void substractTable()
+    {
+        _tables.RemoveAt(_tables.Count - 1);
+    }
+
+    public int getCountOfTables()
+    {
+        return _tables.Count;
+    }
 }

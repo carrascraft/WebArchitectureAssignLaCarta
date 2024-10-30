@@ -3,6 +3,7 @@ using BlazorSignalRApp.Modules;
 using BlazorSignalRApp.Components.Pages;
 using Microsoft.AspNetCore.SignalR.Client;
 using System.Xml.Linq;
+using MudBlazor;
 namespace BlazorSignalRApp.Hubs;
 
 public class ChatHub : Hub
@@ -33,8 +34,18 @@ public class ChatHub : Hub
         RestaurantRepository.deleteItemToMenuFromARestaurant(restaurantId, priceItem, nameItem);
         await Clients.All.SendAsync("ReceiveMessage", "-1", "-1");
     }
-    
+     
+    public async Task AddTable(int restaurantId)
+    {
+        RestaurantRepository.addTableToRestaurant(restaurantId);
+        await Clients.All.SendAsync("ReceiveMessage", "-1", "-1");
+    }
 
+    public async Task SubstractTable(int restaurantId)
+    {
+        RestaurantRepository.substractTableToRestaurant(restaurantId);
+        await Clients.All.SendAsync("ReceiveMessage", "-1", "-1");
+    }
 
     public async Task DeliverOrder(int tableId, string order)
     {
