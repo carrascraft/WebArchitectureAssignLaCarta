@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\BlazorSignalRApp.csproj": {}
+    "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\BlazorSignalRApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\BlazorSignalRApp.csproj": {
+    "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\BlazorSignalRApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\BlazorSignalRApp.csproj",
+        "projectUniqueName": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\BlazorSignalRApp.csproj",
         "projectName": "BlazorSignalRApp",
-        "projectPath": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\BlazorSignalRApp.csproj",
-        "packagesPath": "C:\\Users\\Ezequiel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\obj\\",
+        "projectPath": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\BlazorSignalRApp.csproj",
+        "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ezequiel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

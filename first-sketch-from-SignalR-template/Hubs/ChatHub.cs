@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.SignalR;
 using BlazorSignalRApp.Modules;
 using BlazorSignalRApp.Components.Pages;
+using Microsoft.AspNetCore.SignalR.Client;
+using System.Xml.Linq;
 namespace BlazorSignalRApp.Hubs;
 
 public class ChatHub : Hub
@@ -11,6 +13,29 @@ public class ChatHub : Hub
         messagesRepository.addMessage(message);
         await Clients.All.SendAsync("ReceiveMessage", user, message);
     }
+    public async Task CreateResto(int countTables)
+    {
+        RestaurantRepository.addRestaurant(countTables);
+        await Clients.All.SendAsync("ReceiveMessage", "-1", "-1");
+    }
+
+    public async Task AddMenuItem(int restaurantId, int priceItem, string nameItem)
+    {
+        Console.WriteLine($"Añadir desde chatHub ítem: {nameItem}, Precio: {priceItem}");
+        RestaurantRepository.addItemToMenuFromARestaurant(restaurantId, priceItem, nameItem);
+        await Clients.All.SendAsync("ReceiveMessage", "-1", "-1");
+    }
+
+
+    public async Task DeleteMenuItem(int restaurantId, int priceItem, string nameItem)
+    {
+        Console.WriteLine($"Eliminando desde chatHub ítem: {nameItem}, Precio: {priceItem}");
+        RestaurantRepository.deleteItemToMenuFromARestaurant(restaurantId, priceItem, nameItem);
+        await Clients.All.SendAsync("ReceiveMessage", "-1", "-1");
+    }
+    
+
+
     public async Task DeliverOrder(int tableId, string order)
     {
         ordersRepository.deliverOrderOfTable(tableId, order);

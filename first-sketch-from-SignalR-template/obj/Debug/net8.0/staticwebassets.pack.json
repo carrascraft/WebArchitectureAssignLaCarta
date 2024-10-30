@@ -1,43 +1,43 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorSignalRApp.bundle.scp.css",
+      "Id": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorSignalRApp.bundle.scp.css",
       "PackagePath": "staticwebassets\\BlazorSignalRApp.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\app.css",
+      "Id": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\clock.png",
+      "Id": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\clock.png",
       "PackagePath": "staticwebassets\\clock.png"
     },
     {
-      "Id": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\left.png",
+      "Id": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\left.png",
       "PackagePath": "staticwebassets\\left.png"
     },
     {
-      "Id": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\quote.png",
+      "Id": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\quote.png",
       "PackagePath": "staticwebassets\\quote.png"
     },
     {
-      "Id": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\styles.css",
+      "Id": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\styles.css",
       "PackagePath": "staticwebassets\\styles.css"
     },
     {
-      "Id": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\user.png",
+      "Id": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\user.png",
       "PackagePath": "staticwebassets\\user.png"
     },
     {

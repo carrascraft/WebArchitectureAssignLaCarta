@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TuUvA2+QODGWAe4enIcEhuHndRqyyoIwMxLd9yHjkvg=",
+  "Hash": "sxERqdtiAEOr8yHE2BJqqmxFtW0Ww8PG88m6jUDSDc0=",
   "Source": "BlazorSignalRApp",
   "BasePath": "_content/BlazorSignalRApp",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "BlazorSignalRApp\\wwwroot",
       "Source": "BlazorSignalRApp",
-      "ContentRoot": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\",
       "BasePath": "_content/BlazorSignalRApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Ezequiel\\.nuget\\packages\\mudblazor\\7.12.1\\staticwebassets\\MudBlazor.min.css",
+      "Identity": "C:\\Users\\gabri\\.nuget\\packages\\mudblazor\\7.12.1\\staticwebassets\\MudBlazor.min.css",
       "SourceId": "MudBlazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Ezequiel\\.nuget\\packages\\mudblazor\\7.12.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gabri\\.nuget\\packages\\mudblazor\\7.12.1\\staticwebassets\\",
       "BasePath": "_content/MudBlazor",
       "RelativePath": "MudBlazor.min.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ezequiel\\.nuget\\packages\\mudblazor\\7.12.1\\staticwebassets\\MudBlazor.min.css"
+      "OriginalItemSpec": "C:\\Users\\gabri\\.nuget\\packages\\mudblazor\\7.12.1\\staticwebassets\\MudBlazor.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ezequiel\\.nuget\\packages\\mudblazor\\7.12.1\\staticwebassets\\MudBlazor.min.js",
+      "Identity": "C:\\Users\\gabri\\.nuget\\packages\\mudblazor\\7.12.1\\staticwebassets\\MudBlazor.min.js",
       "SourceId": "MudBlazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Ezequiel\\.nuget\\packages\\mudblazor\\7.12.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\gabri\\.nuget\\packages\\mudblazor\\7.12.1\\staticwebassets\\",
       "BasePath": "_content/MudBlazor",
       "RelativePath": "MudBlazor.min.js",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ezequiel\\.nuget\\packages\\mudblazor\\7.12.1\\staticwebassets\\MudBlazor.min.js"
+      "OriginalItemSpec": "C:\\Users\\gabri\\.nuget\\packages\\mudblazor\\7.12.1\\staticwebassets\\MudBlazor.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorSignalRApp.styles.css",
+      "Identity": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorSignalRApp.styles.css",
       "SourceId": "BlazorSignalRApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/BlazorSignalRApp",
       "RelativePath": "BlazorSignalRApp.styles.css",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorSignalRApp.styles.css"
+      "OriginalItemSpec": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorSignalRApp.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorSignalRApp.bundle.scp.css",
+      "Identity": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorSignalRApp.bundle.scp.css",
       "SourceId": "BlazorSignalRApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/BlazorSignalRApp",
       "RelativePath": "BlazorSignalRApp.bundle.scp.css",
       "AssetKind": "All",
@@ -90,13 +90,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorSignalRApp.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorSignalRApp.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\app.css",
       "SourceId": "BlazorSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\",
       "BasePath": "_content/BlazorSignalRApp",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "BlazorSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\",
       "BasePath": "_content/BlazorSignalRApp",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "BlazorSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\",
       "BasePath": "_content/BlazorSignalRApp",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\clock.png",
+      "Identity": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\clock.png",
       "SourceId": "BlazorSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\",
       "BasePath": "_content/BlazorSignalRApp",
       "RelativePath": "clock.png",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\clock.png"
     },
     {
-      "Identity": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\favicon.png",
       "SourceId": "BlazorSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\",
       "BasePath": "_content/BlazorSignalRApp",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\left.png",
+      "Identity": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\left.png",
       "SourceId": "BlazorSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\",
       "BasePath": "_content/BlazorSignalRApp",
       "RelativePath": "left.png",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\left.png"
     },
     {
-      "Identity": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\quote.png",
+      "Identity": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\quote.png",
       "SourceId": "BlazorSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\",
       "BasePath": "_content/BlazorSignalRApp",
       "RelativePath": "quote.png",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\quote.png"
     },
     {
-      "Identity": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\styles.css",
+      "Identity": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\styles.css",
       "SourceId": "BlazorSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\",
       "BasePath": "_content/BlazorSignalRApp",
       "RelativePath": "styles.css",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\styles.css"
     },
     {
-      "Identity": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\user.png",
+      "Identity": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\user.png",
       "SourceId": "BlazorSignalRApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\wwwroot\\",
       "BasePath": "_content/BlazorSignalRApp",
       "RelativePath": "user.png",
       "AssetKind": "All",

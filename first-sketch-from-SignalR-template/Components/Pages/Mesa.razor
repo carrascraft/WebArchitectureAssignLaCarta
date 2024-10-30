@@ -1,4 +1,4 @@
-@page "/table/{tableId}"
+@* @page "/table/{tableId}"
 
 @rendermode InteractiveServer
 @using BlazorSignalRApp.Modules;
@@ -19,7 +19,7 @@
 </section>
 
 
-@foreach(var menuItem in menuRepository.getNamesAndPrices()){
+@foreach(var menuItem in Menu.getNamesAndPrices()){
 
     <div class="list-group">
         <a class="list-group-item list-group-item-action flex-column align-items-start"> 
@@ -93,13 +93,13 @@
                 </div>
 
                 <div>
-                    <h3 class="text-muted">@(menuRepository.priceOfItem(name).ToString("C0", new CultureInfo("es-AR")))</h3>
+                    <h3 class="text-muted">@(Menu.priceOfItem(name).ToString("C0", new CultureInfo("es-AR")))</h3>
                     
                     @if (quantity != 0)
                     {
                         <div class="d-flex align-items-center">
                             <h5 class="text-muted me-2">Total:</h5>
-                            <h5 class="text-muted">@((quantity * menuRepository.priceOfItem(name)).ToString("C0", new CultureInfo("es-AR")))</h5>
+                            <h5 class="text-muted">@((quantity * Menu.priceOfItem(name)).ToString("C0", new CultureInfo("es-AR")))</h5>
                         </div>
                     }
                     
@@ -245,7 +245,7 @@
         }
     }
 
-}
+} *@
 
 
 
