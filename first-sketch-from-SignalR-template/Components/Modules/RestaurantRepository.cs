@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Http.Features;
 using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace BlazorSignalRApp.Modules;
 
@@ -12,6 +15,7 @@ public static class RestaurantRepository
         new Restaurant(3, 3)
      };
 
+    private static readonly string filePath = "restaurants.json";
 
     public static int addRestaurant(int countMesas)
     {
@@ -60,5 +64,44 @@ public static class RestaurantRepository
     {
         MenuItem menuItem = new MenuItem() { Name = name, Price = price };
         restaurants[id].deleteToMenu(menuItem);
+    }
+    
+    public static async Task GuardarEstados()
+    {
+        var estados = new List<object>();
+
+        // Recorre cada restaurante y obtiene su estado
+        foreach (var restaurant in restaurants)
+        {
+            estados.Add(restaurant.getState());
+        }
+
+        // Guarda todos los estados en un único archivo JSON
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            await JsonSerializer.SerializeAsync(stream, estados, options);
+        }
+    }
+    public static async Task LoadStates()
+    {
+        if (!File.Exists(filePath))
+            return;
+
+        using (var stream = new FileStream(filePath, FileMode.Open))
+        {
+            var estados = await JsonSerializer.DeserializeAsync<List<RestaurantState>>(stream);
+            if (estados != null)
+            {
+                restaurants.Clear();
+                foreach (var estado in estados)
+                {
+                    Console.WriteLine(estado.Id);
+                    var restaurant = new Restaurant(estado.Id, estado.Tables.Count);
+                    restaurant.loadState(estado);
+                    restaurants.Add(restaurant);
+                }
+            }
+        }
     }
 }

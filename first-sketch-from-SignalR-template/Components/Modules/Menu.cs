@@ -19,7 +19,14 @@ public class Menu
 
         _repo.Add(elem);
     }
-
+    public List<MenuItem> getMenuItems(){
+        return _repo;
+    }
+    public void loadState(List<MenuItem> menuItems)
+    {
+        _repo.Clear();
+        _repo.AddRange(menuItems);
+    }
     public void deleteMenuItem(MenuItem elem)
     {
         var item = _repo.FirstOrDefault(i => i.Name == elem.Name);

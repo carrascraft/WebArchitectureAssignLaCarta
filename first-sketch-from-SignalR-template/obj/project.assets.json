@@ -1094,24 +1094,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gabri\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\penso\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\BlazorSignalRApp.csproj",
+      "projectUniqueName": "C:\\Users\\penso\\Documents\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\BlazorSignalRApp.csproj",
       "projectName": "BlazorSignalRApp",
-      "projectPath": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\BlazorSignalRApp.csproj",
-      "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gabri\\tpArqNew\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\obj\\",
+      "projectPath": "C:\\Users\\penso\\Documents\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\BlazorSignalRApp.csproj",
+      "packagesPath": "C:\\Users\\penso\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\penso\\Documents\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\penso\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

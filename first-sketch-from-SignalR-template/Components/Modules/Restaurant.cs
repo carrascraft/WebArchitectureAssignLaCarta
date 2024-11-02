@@ -66,4 +66,21 @@ public class Restaurant
     {
         return _tables.Count;
     }
+    
+    public object getState()
+    {
+        return new
+        {
+            Id = _id,
+            Tables = _tables,
+            Menu = _menu.getMenuItems() 
+        };
+    }
+
+    public void loadState(RestaurantState state)
+    {
+        _id = state.Id;
+        _tables = state.Tables;
+        _menu.loadState(state.Menu);
+    }
 }

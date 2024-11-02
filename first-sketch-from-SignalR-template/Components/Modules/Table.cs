@@ -2,17 +2,25 @@ using Microsoft.AspNetCore.Http.Features;
 
 namespace BlazorSignalRApp.Modules;
 
-
 public class Table
 {
+    public Table()
+    {
+        _orders = new List<string>();
+    }
 
     public Table(int id)
     {
-        _id = id;
+        Id = id;
+        _orders = new List<string>();
+    }
+    
+    public int Id { get; set; }
+    public List<string> Orders 
+    { 
+        get => _orders;
+        set => _orders = value;
     }
 
-    private int _id = 0;
-
-    private List<string> _orders = new List<string>();
-
+    private List<string> _orders;
 }
