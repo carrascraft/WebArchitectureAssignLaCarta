@@ -1,0 +1,79 @@
+@page "/qr/{restaurantId:int}/{mesas:int}"
+@using BlazorMapApp.Services
+@inject QRCodeService qrCodeService
+@inject NavigationManager NavigationManager
+
+<h1>Generador de códigos QR para restaurante @RestaurantId</h1>
+<div class="container mt-4">
+    @if (qrCodes != null && qrCodes.Any())
+    {
+        <div class="text-center">
+            @for (int i = 0; i < qrCodes.Count; i += 3)
+            {
+                <div class="row mb-4">
+                    @for (int j = i; j < i + 3 && j < qrCodes.Count; j++)
+                    {
+                        <div class="col-md-4">
+                            <div class="qr-container">
+                                <img src="data:image/png;base64,@Convert.ToBase64String(qrCodes[j].Image)" 
+                                     alt="QR Code" 
+                                     style="max-width: 200px; width: 100%;" />
+                                <p class="mt-2 mb-1">Mesa @qrCodes[j].MesaId</p>
+                                <small class="text-muted">
+                                    <a href="@qrCodes[j].Url" target="_blank">Probar código</a>
+                                </small>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<style>
+    .qr-container {
+        padding: 15px;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+</style>
+
+@code {
+    [Parameter]
+    public int Mesas { get; set; }
+    
+    [Parameter]
+    public int RestaurantId { get; set; }
+
+    private byte[] qrCodeImage;
+    private string urlGenerada;
+    private List<QRCodeData> qrCodes = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var baseUrl = NavigationManager.BaseUri.TrimEnd('/');
+        for (int mesaId = 1; mesaId <= Mesas; mesaId++){
+
+            var hash = qrCodeService.GenerarHashMesa(RestaurantId, mesaId);
+            urlGenerada = $"{baseUrl}/m/{RestaurantId}/{mesaId}/{hash}";
+            qrCodeImage = qrCodeService.GenerarCodigoQR(urlGenerada);
+            qrCodes.Add(new QRCodeData
+            {
+                MesaId = mesaId,
+                Url = urlGenerada,
+                Image = qrCodeImage
+            });
+        }
+
+    }
+        private class QRCodeData
+    {
+        public int MesaId { get; set; }
+        public string Url { get; set; }
+        public byte[] Image { get; set; }
+    }
+
+}

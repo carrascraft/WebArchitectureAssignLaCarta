@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/Users/penso/Documents/BlazorMapApp/BlazorMapApp.csproj": {}
+    "C:\\Users\\penso\\Documents\\WebArchitectureAssignLaCarta\\BlazorMapApp\\BlazorMapApp.csproj": {}
   },
   "projects": {
-    "/Users/penso/Documents/BlazorMapApp/BlazorMapApp.csproj": {
+    "C:\\Users\\penso\\Documents\\WebArchitectureAssignLaCarta\\BlazorMapApp\\BlazorMapApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/penso/Documents/BlazorMapApp/BlazorMapApp.csproj",
+        "projectUniqueName": "C:\\Users\\penso\\Documents\\WebArchitectureAssignLaCarta\\BlazorMapApp\\BlazorMapApp.csproj",
         "projectName": "BlazorMapApp",
-        "projectPath": "/Users/penso/Documents/BlazorMapApp/BlazorMapApp.csproj",
-        "packagesPath": "/Users/penso/.nuget/packages/",
-        "outputPath": "/Users/penso/Documents/BlazorMapApp/obj/",
+        "projectPath": "C:\\Users\\penso\\Documents\\WebArchitectureAssignLaCarta\\BlazorMapApp\\BlazorMapApp.csproj",
+        "packagesPath": "C:\\Users\\penso\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\penso\\Documents\\WebArchitectureAssignLaCarta\\BlazorMapApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/penso/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\penso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AspNetMonsters.Blazor.Geolocation": {
+              "target": "Package",
+              "version": "[0.4.0.1017, )"
+            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -67,6 +74,10 @@
               "target": "Package",
               "version": "[8.0.10, )",
               "autoReferenced": true
+            },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.6.0, )"
             }
           },
           "imports": [
@@ -91,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

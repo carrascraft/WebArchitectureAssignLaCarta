@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNetMonsters.Blazor.Geolocation" Version="0.4.0.1017" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.10" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.0" />
   <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.0" />
+  <PackageReference Include="QRCoder" Version="1.6.0" />
 
   </ItemGroup>
 

@@ -1,0 +1,23 @@
+@page "/m/{restaurantId:int}/{mesaId:int}/{hash}"
+@inject NavigationManager NavigationManager
+@inject NavigationStateService NavigationStateService
+
+@code {
+    [Parameter]
+    public int RestaurantId { get; set; }
+
+    [Parameter]
+    public int MesaId { get; set; }
+
+    [Parameter]
+    public string Hash { get; set; }
+
+    protected override void OnInitialized()
+    {
+        // Marca que el usuario ha pasado por esta página
+        NavigationStateService.SetAllowedHash(RestaurantId, Hash);
+
+        // Redirige a la página segura
+        NavigationManager.NavigateTo($"/mesa-segura/{RestaurantId}/{MesaId}/{Hash}");
+    }
+}

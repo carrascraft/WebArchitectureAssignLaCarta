@@ -1,0 +1,41 @@
+@page "/map"
+@inject IJSRuntime JS
+
+<h3>My Map</h3>
+<div id="map" style="height: 500px;"></div>
+
+@code {
+    private double Latitude { get; set; }
+    private double Longitude { get; set; }
+    private List<Point> puntos = new();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await GetLocationAsync();
+            await JS.InvokeVoidAsync("initMap", puntos);
+        }
+    }
+
+    private async Task GetLocationAsync()
+    {
+        // Obtiene la ubicación actual a través de JavaScript
+        var location = await JS.InvokeAsync<double[]>("getLocation");
+        Latitude = location[0];
+        Longitude = location[1];
+
+        // Agrega la ubicación actual y otros puntos a la lista de puntos
+        puntos.Add(new Point { Lat = Latitude, Lng = Longitude });
+        puntos.Add(new Point { Lat = -34.6037, Lng = -58.3816 }); // Buenos Aires
+        puntos.Add(new Point { Lat = -34.6351, Lng = -58.3772 });
+        puntos.Add(new Point { Lat = -34.5862, Lng = -58.3989 });
+    }
+
+    // Clase para representar un punto en el mapa
+    public class Point
+    {
+        public double Lat { get; set; }
+        public double Lng { get; set; }
+    }
+}
