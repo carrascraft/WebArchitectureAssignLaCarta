@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Blazored.SessionStorage/2.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "7.0.1"
+        },
+        "compile": {
+          "lib/net7.0/Blazored.SessionStorage.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0/Blazored.SessionStorage.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/8.0.8": {
         "type": "package",
         "dependencies": {
@@ -443,6 +455,20 @@
     }
   },
   "libraries": {
+    "Blazored.SessionStorage/2.4.0": {
+      "sha512": "e3XXH+zGGxDq1zC7YzLDD8mfvtoC6ESwTWOGD25H+FbPJlB7yQeL72hDY76tqkcrh98fh+y12r4BNhyQVV9YKw==",
+      "type": "package",
+      "path": "blazored.sessionstorage/2.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazored.sessionstorage.2.4.0.nupkg.sha512",
+        "blazored.sessionstorage.nuspec",
+        "icon.png",
+        "lib/net6.0/Blazored.SessionStorage.dll",
+        "lib/net7.0/Blazored.SessionStorage.dll"
+      ]
+    },
     "Microsoft.AspNetCore.Authorization/8.0.8": {
       "sha512": "e+ehkJTx0bqUb9zzM9ohV830LhoK3fy5lfVGPWAozbq6I2rJpyq7L0OUgEGNEQLMTzawkDjpNlJ4WU1ck/TDjw==",
       "type": "package",
@@ -1089,28 +1115,30 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Blazored.SessionStorage >= 2.4.0",
       "Microsoft.AspNetCore.SignalR.Client >= 8.0.0",
       "MudBlazor >= 7.12.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ezequiel\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\BlazorSignalRApp.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Source\\Repos\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\BlazorSignalRApp.csproj",
       "projectName": "BlazorSignalRApp",
-      "projectPath": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\BlazorSignalRApp.csproj",
-      "packagesPath": "C:\\Users\\Ezequiel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ezequiel\\Documents\\webapp\\SignalR-Copiado\\obj\\",
+      "projectPath": "C:\\Users\\HP\\Source\\Repos\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\BlazorSignalRApp.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\Source\\Repos\\WebArchitectureAssignLaCarta\\first-sketch-from-SignalR-template\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ezequiel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1142,6 +1170,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Blazored.SessionStorage": {
+            "target": "Package",
+            "version": "[2.4.0, )"
+          },
           "Microsoft.AspNetCore.SignalR.Client": {
             "target": "Package",
             "version": "[8.0.0, )"

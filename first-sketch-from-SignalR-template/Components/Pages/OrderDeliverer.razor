@@ -1,83 +1,119 @@
 @page "/orderDeliverer"
 @rendermode InteractiveServer
-@using BlazorSignalRApp.Modules;
-
+@using BlazorSignalRApp.Modules
+@using Blazored.SessionStorage
 @using Microsoft.AspNetCore.SignalR.Client
 @inject NavigationManager Navigation
+@inject AuthService AuthService
+@inject ISessionStorageService sessionStorage
 @implements IAsyncDisposable
+
 <link href="styles.css" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <PageTitle>Buenas Cocinero</PageTitle>
 
-<section class="d-flex justify-content-center">
-   <h1 class="display-4">JAJAJA LA PÁGINA DEL EMPLEADO POBRE!!!!!</h1>
-</section>
-
-
-
-
-
-
-@if( ordersRepository.getOpenedTables().Count() == 0  ){
-    <div class="d-flex justify-content-center">TODO AL DÍA ÑERI</div>
+@if (!isAuthenticated)
+{
+    <div class="alert alert-warning">
+        No estás autenticado. Redirigiendo a la página de login...
+    </div>
 }
-else{
-    @foreach (int tableId in ordersRepository.getOpenedTables())
+else
+{
+    <section class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="display-4">¡Bienvenido Cocinero! Aquí están los pedidos pendientes.</h1>
+        <button class="btn btn-danger" @onclick="HandleLogout">Logout</button>
+    </section>
+
+    @if (ordersRepository.getOpenedTables().Count() == 0)
     {
-        <div class="border rounded p-3 mb-4 bg-light">
-            <h3 class="text-primary mb-3">Mesa @tableId - Pending Orders</h3>
-            <div class="pl-3">
-                @foreach (var message in ordersRepository.getTableOrders(tableId))
-                {
-                    <div class="d-flex justify-content-between align-items-center mb-2 p-2 border-bottom">
-                        <span>@message</span>
-                        <button class="btn btn-outline-success btn-sm" type="button" @onclick="() => DeliverMessage(tableId, message)">
-                            ENTREGADO!
-                        </button>
-                    </div>
-                }
-            </div>
-        </div>
+        <div class="d-flex justify-content-center">TODO AL DÍA ÑERI</div>
     }
-}
-
-
-
-
-@code{
-    private HubConnection? hubConnection;
-    private string? messageInput;
-
-
-
-
-
-    protected override async Task OnInitializedAsync()
+    else
     {
-        hubConnection = new HubConnectionBuilder()
-            .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
-            .Build();
-
-        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        @foreach (int tableId in ordersRepository.getOpenedTables())
         {
-            InvokeAsync(StateHasChanged);
-        });
+            <div class="border rounded p-3 mb-4 bg-light">
+                <h3 class="text-primary mb-3">Mesa @tableId - Pedidos Pendientes</h3>
+                <div class="pl-3">
+                    @foreach (var message in ordersRepository.getTableOrders(tableId))
+                    {
+                        <div class="d-flex justify-content-between align-items-center mb-2 p-2 border-bottom">
+                            <span>@message</span>
+                            <button class="btn btn-outline-success btn-sm" type="button" @onclick="() => DeliverMessage(tableId, message)">
+                                ENTREGADO!
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    }
+}
 
+@code {
+    private HubConnection? hubConnection;
+    private bool isAuthenticated = false;
+    private bool isInitialized = false; // Añadido para controlar la inicialización
 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // Solo intenta conectar al hub en el primer renderizado y si el usuario está autenticado
+        if (firstRender && !isInitialized)
+        {
+            // Verificar si el usuario está autenticado
+            var sessionId = await sessionStorage.GetItemAsync<string>("sessionId");
+            if (sessionId != null && AuthService.IsUserLoggedIn(sessionId))
+            {
+                isAuthenticated = true;
+                isInitialized = true; // Marcar como inicializado
 
-        await hubConnection.StartAsync();
+                // Inicializar y conectar al hub
+                hubConnection = new HubConnectionBuilder()
+                    .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
+                    .Build();
+
+                hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+                {
+                    InvokeAsync(StateHasChanged);
+                });
+
+                await hubConnection.StartAsync();
+            }
+            else
+            {
+                // Si no está autenticado, redirigir a la página de login
+                Navigation.NavigateTo("/login");
+            }
+
+            // Forzar una actualización visual después de inicializar
+            StateHasChanged();
+        }
     }
 
-    private async Task DeliverMessage( int tableId, string order)
+    private async Task DeliverMessage(int tableId, string order)
     {
         if (hubConnection is not null)
         {
             await hubConnection.SendAsync("DeliverOrder", tableId, order);
         }
+    }
+
+    private async Task HandleLogout()
+    {
+        var sessionId = await sessionStorage.GetItemAsync<string>("sessionId");
+
+        if (sessionId != null)
+        {
+            AuthService.Logout(sessionId); // Elimina la sesión del servicio de autenticación
+            await sessionStorage.RemoveItemAsync("sessionId"); // Limpia el almacenamiento de sesión
+        }
+
+        isAuthenticated = false;
+        Navigation.NavigateTo("/login");
     }
 
     public bool IsConnected =>
@@ -91,7 +127,5 @@ else{
         }
     }
 
+
 }
-
-
-

@@ -1,0 +1,72 @@
+@page "/login"
+
+@rendermode InteractiveServer
+@using BlazorSignalRApp.Modules;
+@using Blazored.SessionStorage
+
+@inject AuthService AuthService
+@inject NavigationManager NavigationManager
+@inject ISessionStorageService sessionStorage
+
+<h3>Login</h3>
+
+@if (!isAuthenticated)
+{
+    <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+        <DataAnnotationsValidator />
+        <div>
+            <label>Username:</label>
+            <InputText @bind-Value="loginModel.Username" />
+        </div>
+        <div>
+            <label>Password:</label>
+            <InputText @bind-Value="loginModel.Password" InputType="password" />
+        </div>
+        <button type="submit">Login</button>
+    </EditForm>
+    <p>@loginMessage</p>
+}
+else
+{
+    <p>You are logged in!</p>
+}
+
+@code {
+    private bool isAuthenticated = false;
+    private string loginMessage = string.Empty;
+    private LoginModel loginModel = new LoginModel();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Limpiar cualquier sesión anterior si el usuario accede a la página de login
+            var sessionId = await sessionStorage.GetItemAsync<string>("sessionId");
+            if (sessionId != null)
+            {
+                AuthService.Logout(sessionId);
+                await sessionStorage.RemoveItemAsync("sessionId");
+            }
+        }
+    }
+
+    private async Task HandleLogin()
+    {
+        if (AuthService.Login(loginModel.Username, loginModel.Password, out var sessionId))
+        {
+            isAuthenticated = true;
+            await sessionStorage.SetItemAsync("sessionId", sessionId);
+            NavigationManager.NavigateTo("/orderDeliverer");
+        }
+        else
+        {
+            loginMessage = "Invalid login attempt.";
+        }
+    }
+
+    public class LoginModel
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
+}
