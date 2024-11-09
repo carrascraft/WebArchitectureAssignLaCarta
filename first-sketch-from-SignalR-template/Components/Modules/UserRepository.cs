@@ -4,15 +4,23 @@ namespace BlazorSignalRApp.Modules;
 
 public class UserRepository
 {
-    private readonly List<User> _users = new List<User>
-    {
-        new User { Username = "chef1", Password = "chef1Pass" },
-        new User { Username = "chef2", Password = "chef2Pass" }
-    };
+    private readonly List<User> _users = new List<User>();
 
     public User? ValidateUser(string username, string password)
     {
         return _users.FirstOrDefault(u => u.Username == username && u.Password == password);
+    }
+
+    public bool AddUser(string username, string password)
+    {
+        if (_users.Any(u => u.Username == username))
+        {
+            // El usuario ya existe
+            return false;
+        }
+
+        _users.Add(new User { Username = username, Password = password });
+        return true;
     }
 }
 

@@ -12,6 +12,20 @@ public class AuthService
         _userRepository = userRepository;
     }
 
+    public bool Register(string username, string password, out string sessionId)
+    {
+        if (_userRepository.AddUser(username, password))
+        {
+            // Usuario registrado con éxito, creamos la sesión
+            sessionId = Guid.NewGuid().ToString();
+            _activeSessions[sessionId] = new User { Username = username, Password = password };
+            return true;
+        }
+
+        sessionId = string.Empty;
+        return false;
+    }
+
     public bool Login(string username, string password, out string sessionId)
     {
         var user = _userRepository.ValidateUser(username, password);

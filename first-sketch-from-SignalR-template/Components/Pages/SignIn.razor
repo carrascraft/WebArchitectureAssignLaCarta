@@ -1,0 +1,49 @@
+@page "/signin"
+
+@rendermode InteractiveServer
+@using BlazorSignalRApp.Modules;
+@using Blazored.SessionStorage
+
+@inject AuthService AuthService
+@inject NavigationManager NavigationManager
+@inject ISessionStorageService sessionStorage
+
+<h3>Register</h3>
+
+<EditForm Model="registerModel" OnValidSubmit="HandleRegister">
+    <DataAnnotationsValidator />
+    <div>
+        <label>Username:</label>
+        <InputText @bind-Value="registerModel.Username" />
+    </div>
+    <div>
+        <label>Password:</label>
+        <InputText @bind-Value="registerModel.Password" InputType="password" />
+    </div>
+    <button type="submit">Register</button>
+</EditForm>
+<p>@registerMessage</p>
+
+@code {
+    private string registerMessage = string.Empty;
+    private RegisterModel registerModel = new RegisterModel();
+
+    private async Task HandleRegister()
+    {
+        if (AuthService.Register(registerModel.Username, registerModel.Password, out var sessionId))
+        {
+            await sessionStorage.SetItemAsync("sessionId", sessionId); // Almacenar la sesión en session storage
+            NavigationManager.NavigateTo("/orderDeliverer");
+        }
+        else
+        {
+            registerMessage = "Registration failed. Username already exists.";
+        }
+    }
+
+    public class RegisterModel
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
+}
